@@ -1,61 +1,61 @@
-# 🚀 Getting started with Strapi
+# Blog Website
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+This project is a Strapi-based blog site configured to use a PostgreSQL database hosted on Render.
 
-### `develop`
+## Features
+- Strapi CMS for content management
+- PostgreSQL database (cloud-hosted on Render)
+- Environment variables for secure configuration
+- Ready for deployment and local development
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+## Getting Started
 
+### 1. Clone the repository
+```
+git clone <your-repo-url>
+cd Blog-website
+```
+
+### 2. Install dependencies
+```
+npm install
+```
+
+### 3. Configure environment variables
+Edit the `.env` file with your database and secret values. Example:
+```
+DATABASE_HOST=dpg-xxxxxx.region.render.com
+DATABASE_PORT=5432
+DATABASE_NAME=your_db_name
+DATABASE_USERNAME=your_db_user
+DATABASE_PASSWORD=your_db_password
+DATABASE_SSL=true
+```
+
+### 4. Start Strapi
 ```
 npm run develop
-# or
-yarn develop
 ```
 
-### `start`
+Visit [http://localhost:1337/admin](http://localhost:1337/admin) to create your admin user and manage content.
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+## Content Types
+- Posts (title, content, publishedAt, etc.)
+- Authors (name, bio, etc.)
 
-```
-npm run start
-# or
-yarn start
-```
+## API Permissions
+To allow public access to your API endpoints:
+1. Go to **Settings → Roles → Public** in the Strapi admin panel.
+2. Enable the permissions you need (e.g., find, findOne for Posts).
+3. Save changes.
 
-### `build`
+## Troubleshooting
+- If you see a 403 Forbidden error, check your API permissions.
+- If you see a database connection error, verify your `.env` values and Render database status.
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+## Deployment
+You can deploy this project to any platform that supports Node.js and can connect to your Render PostgreSQL database.
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+For more details, see the Strapi documentation: https://docs.strapi.io/
